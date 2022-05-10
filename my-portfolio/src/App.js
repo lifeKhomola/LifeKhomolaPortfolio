@@ -1,8 +1,9 @@
+import GlobalStyle from './globalStyles'
 function App() {
-  return <div>
+  return <GlobalStyle>
     App File
-    </div>
+    </GlobalStyle>
     
 }
 
-export default App
+export default App  

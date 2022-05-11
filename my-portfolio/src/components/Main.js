@@ -23,9 +23,8 @@ padding:2rem;
 const Contact = styled(NavLink)`
 color:${prop => prop.theme.text};
 position:absolute;
-top:2rem;
-top:0;
-right:23px;
+top:3rem;
+right:100px;
 text-decoration:none;
 // right:calc(1rem+ 2vw);
 z-index:3;

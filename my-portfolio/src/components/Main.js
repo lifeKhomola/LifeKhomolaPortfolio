@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled, {keyframes} from 'styled-components'
 // import PowerButton from '../subComponents/PowerButton'
 import HomeBtn from '../subComponents/home'
@@ -6,7 +6,8 @@ import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcons from '../subComponents/SocialIcons'
 import {NavLink} from 'react-router-dom'
 import {YinYang} from '../components/AllSvgs'
-// import {liveVK} from '../components/AllSvgs'
+import Intro from '../components/intro'
+
 
 const MainContainer = styled.div`
 background:${props =>props.theme.body};
@@ -45,7 +46,7 @@ z-index:1;
 
 `
 const Work = styled(NavLink)`
-color:${prop => prop.theme.text};
+color:${prop => prop.click ? prop.theme.body: prop.theme.text};
 position:absolute;
 top:50%;
 left: 2rem;
@@ -66,7 +67,7 @@ justify-content: space-evenly;
 
 `
 const About = styled(NavLink)`
-color:${prop => prop.theme.text};
+color:${prop => prop.click ? prop.theme.body: prop.theme.text};
 text-decoration:none;
 z-index:1;
 
@@ -86,8 +87,8 @@ to{
 `
 const Center = styled.button`
 position:absolute;
-top:50%;
-left:50%;
+top:${props => props.click ? '80%':'50%'};
+left:${props => props.click ? '92%':'50%'};
 transform: translate(-50%,-50%);
 border:none;
 outline:none;
@@ -97,28 +98,47 @@ display:flex;
 flex-direction:column;
 justify-content: center;
 align-items:center;
+transition: all 1s ease;
 
 &>*:first-child{
-    animation: ${rotate} infinite 2.5s linear;
+    animation: ${rotate} infinite 3s linear;
 
 }
 
 &>*:last-child{
+    display :${props => props.click ? 'none':'inline-block'};
     padding-top:1rem;
 
 }
 `
 
+const DarkDiv = styled.div`
+position :absolute;
+top:0;
+background-color:#000;
+bottom:0;
+right:50%;
+width:${props => props.click ? '50%':'0%'};
+height:${props => props.click ? '100%':'0%'};
+transition: height 0.5s ease,width 1s ease;
+
+`
+
 
 const Main =()=>{
+
+    const [click,setClick] = useState(false);
+    const handleClick = () => setClick(!click);
     return (
         <MainContainer>
+               <DarkDiv click={click}/>
            <Container>
                <HomeBtn/>
-               <LogoComponent/>
-               <SocialIcons/>
-               <Center>
-                   <YinYang width={150} height={150}   fill='currentColor'/>
+               <LogoComponent theme={click ? 'dark' : 'light'}/>
+               <SocialIcons theme={click ? 'dark' : 'light'}/>
+            
+               <Center click={click}>
+                   <YinYang onClick={()=>handleClick()} width={click ? 120:200} height={click ? 120:150}   fill='currentColor'/>
                    <span>Click here</span>
                </Center>
                <liveVK/>
@@ -128,11 +148,11 @@ const Main =()=>{
                <Blog to='/blog'>
                     <h3>Blog</h3>
                </Blog>
-               <Work to='/work'>
+               <Work to='/work' click={click}>
                     <h3>Work</h3>
                </Work>
                <BottonBar>
-                   <About to='/about'>
+                   <About to='/about' click={click}>
                         <h3>About Me</h3>
                    </About>
                    <Skills to='/skills'>
@@ -141,6 +161,7 @@ const Main =()=>{
                </BottonBar>
 
            </Container>
+           {click ? <Intro click={click}/> : null}
         </MainContainer>
     )
 }

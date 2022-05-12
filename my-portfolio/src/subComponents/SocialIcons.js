@@ -5,6 +5,7 @@ import {Twitter} from '../components/AllSvgs'
 import {YouTube} from '../components/AllSvgs'
 import {Facebook} from '../components/AllSvgs'
 import styled from 'styled-components'
+import {DarkTheme} from '../components/Themes'
 
 const Icons =styled.div`
 display:flex;
@@ -21,32 +22,32 @@ x-index:3;
 const Line = styled.span`
 width:2px;
 height:8rem;
-background-color:#fe7f2d;
+background-color: ${props => props.color ==="dark" ? DarkTheme.text : DarkTheme.body};
 `
-const SocialIcons =()=>{
+const SocialIcons = (props)=>{
     return (
         <Icons>
           <div>
             <NavLink style={{color:'inherit'}} target="_blank" to={{pathname:"https:github/lifeKhomola"}}>
-                <Github width={25} height={25} fill='currentColor'/>
+                <Github width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}/>
             </NavLink>
           </div>
           <div>
             <NavLink style={{color:'inherit'}} target="_blank" to={{pathname:"https:github/lifeKhomola"}}>
-                <Twitter width={25} height={25} fill='currentColor'/>
+                <Twitter width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}/>
             </NavLink>
           </div>
           <div>
             <NavLink style={{color:'inherit'}} target="_blank" to={{pathname:"https:github/lifeKhomola"}}>
-                <YouTube width={25} height={25} fill='currentColor'/>
+                <YouTube width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}/>
             </NavLink>
           </div>
           <div>
             <NavLink style={{color:'inherit'}} target="_blank" to={{pathname:"https:github/lifeKhomola"}}>
-                <Facebook width={25} height={25} fill='currentColor'/>
+                <Facebook width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}/>
             </NavLink>
           </div>
-          <Line/>
+          <Line color={props.theme}/>
         </Icons>
     )
 }

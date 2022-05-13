@@ -1,22 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import Me from '../assets/Images/Vhutshilo-2-removebg-preview.png'
+import {motion} from 'framer-motion'
 
 
 
 
-const Box = styled.div`
+const Box = styled(motion.div)`
 position:absolute;
 left:50%;
 top:50%;
 transform: translate(-50%,-50%);
 display:flex;
-width:50%;
-height:30%;
-background-repeat: no-repeat; 
-background-size: 100% 2px;
+width:55vw;
+// height:55vh;
+
 background: linear-gradient( to right, white 50%, black 50%) bottom,
 linear-gradient( to right,white 50%, black 50%) top;
+background-repeat: no-repeat; 
+background-size: 100% 2px;
 border-left: 2px solid ${props =>props.theme.body};
 border-right: 2px solid ${props =>props.theme.text};
 // background: linear-gradient(
@@ -48,27 +50,41 @@ display:flex;
 }
 `
 const Text = styled.div`
-.h1{
-    
-}
+// font-size:25px;
+color: ${props => props.theme.body};
+padding-left:1rem;
+cursor:pointer;
+display:flex;
+flex-direction:column;
+justify-content:none;
+
 `
 
 
 const Intro =()=>{
     return (
-        <Box>
+        <Box
+        initial={{height:0}}
+        animate={{height:''}}
+        transition={{type:'spring',duration:2,delay:1 }}
+        >
             <SubBox>
-                <Text>
-                    <h1>Hi, </h1>
-                    <h3>I'm LifeKhomola</h3>
-                    <h6>I design and develop web/mobile responsive applications and websites</h6>
+                <Text
+                >
+                    <h1 >Hi, </h1>
+                    <h2>I'm Vhutshilo Khomola.</h2>
+                    <h3>I Design and Develop Web/Mobile Responsive Applications and Websites</h3>
 
                 </Text>
                 </SubBox> 
                 <SubBox>
-                    <div>
+                    <motion.div
+                    initial={{opacity:0}}
+                    animate={{opacity:'1'}}
+                    transition={{duration:2,delay:1 }}
+                    >
                         <img className='pic' src={Me} alt="Profile Pic"/>
-                    </div>
+                    </motion.div>
                 </SubBox>
         </Box>
     )

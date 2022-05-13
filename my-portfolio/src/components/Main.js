@@ -7,6 +7,7 @@ import SocialIcons from '../subComponents/SocialIcons'
 import {NavLink} from 'react-router-dom'
 import {YinYang} from '../components/AllSvgs'
 import Intro from '../components/intro'
+import {motion} from 'framer-motion'
 
 
 const MainContainer = styled.div`
@@ -143,20 +144,35 @@ const Main =()=>{
                </Center>
                <liveVK/>
                <Contact target="_blank" to={{pathname:"mailto:khomolavhutshilo5@gmail.com"}}>
-                   <h3>Contant Me</h3>
+                   <motion.h3
+                   whileHover={{scale:1.1}}
+                   whileTap={{scale:0.9}}
+                   >Contant Me</motion.h3>
                </Contact>
                <Blog to='/blog'>
-                    <h3>Blog</h3>
+               <motion.h3
+                   whileHover={{scale:1.1}}
+                   whileTap={{scale:0.9}}
+                   >Blog</motion.h3>
                </Blog>
                <Work to='/work' click={click}>
-                    <h3>Work</h3>
+               <motion.h3
+                   whileHover={{scale:1.1}}
+                   whileTap={{scale:0.9}}
+                   >Work</motion.h3>
                </Work>
                <BottonBar>
                    <About to='/about' click={click}>
-                        <h3>About Me</h3>
+                   <motion.h3
+                   whileHover={{scale:1.1}}
+                   whileTap={{scale:0.9}}
+                   >About</motion.h3>
                    </About>
                    <Skills to='/skills'>
-                        <h3>My Skills</h3>
+                   <motion.h3
+                   whileHover={{scale:1.1}}
+                   whileTap={{scale:0.9}}
+                   >Skills</motion.h3>
                    </Skills>
                </BottonBar>
 

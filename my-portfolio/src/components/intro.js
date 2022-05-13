@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Me from '../assets/Images/profile-img.png'
+import Me from '../assets/Images/Vhutshilo-2-removebg-preview.png'
+
 
 
 
@@ -47,8 +48,11 @@ display:flex;
 }
 `
 const Text = styled.div`
-
+.h1{
+    
+}
 `
+
 
 const Intro =()=>{
     return (

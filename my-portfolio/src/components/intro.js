@@ -13,7 +13,7 @@ top:50%;
 transform: translate(-50%,-50%);
 display:flex;
 width:55vw;
-// height:55vh;
+//height:55vh;
 
 background: linear-gradient( to right, white 50%, black 50%) bottom,
 linear-gradient( to right,white 50%, black 50%) top;

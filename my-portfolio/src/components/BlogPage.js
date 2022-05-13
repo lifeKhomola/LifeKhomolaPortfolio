@@ -1,11 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
 
+
+const MainContainer = styled.div`
+
+`
 const BlogPage =()=>{
     return (
-        <div>
-            BlogPage component/page
-            <p>BlogPage</p>
-        </div>
+        <MainContainer>
+           
+        </MainContainer>
     )
 }
 

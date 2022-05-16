@@ -168,7 +168,7 @@ const Main =()=>{
                    whileTap={{scale:0.9}}
                    >About</motion.h3>
                    </About>
-                   <Skills to='/skills'>
+                   <Skills to='/skills' click={click}>
                    <motion.h3
                    whileHover={{scale:1.1}}
                    whileTap={{scale:0.9}}

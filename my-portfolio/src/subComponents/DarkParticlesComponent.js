@@ -31,14 +31,14 @@ ParticleComponent = (props) => {
 
   return (
     <Box>
-        <Particles 
-         id="tsparticles"
+        <Particles
+       id="tsparticles"
          init={particlesInit}
          loaded={particlesLoaded}
          options={{
            background: {
              color: {
-               value: "#fff",
+               value: "#000",
              },
            },
            fpsLimit: 120,
@@ -66,10 +66,10 @@ ParticleComponent = (props) => {
            },
            particles: {
              color: {
-               value: "#000",
+               value: "#fff",
              },
              links: {
-               color: "#000",
+               color: "#fff",
                distance: 150,
                enable: true,
                opacity: 0.5,

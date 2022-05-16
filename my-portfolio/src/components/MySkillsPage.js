@@ -99,7 +99,7 @@ const MySkillsPage =()=>{
                                    Web Design
                                </li>
                                <li>
-                                   Web Design
+                                   Web Design  
                                </li>   
                            </ul>
                        </Description>

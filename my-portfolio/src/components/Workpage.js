@@ -6,6 +6,7 @@ import SocialIcons from '../subComponents/SocialIcons'
 import Home from '../subComponents/home'
 import {Work} from "../data/WorkData"
 import Card from '../subComponents/Card'
+import BigTitle from '../subComponents/BigTitle'
 
 const Box = styled.div`
 background-color: ${props => props.theme.body};
@@ -54,6 +55,7 @@ const WorkPage =()=>{
                     <Card key={d.id} data={d}/>
                     )}
                </Main>
+               <BigTitle text="work" top='20%' right=''/>
             </Box>
            
            

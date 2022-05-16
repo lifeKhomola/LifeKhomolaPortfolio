@@ -6,11 +6,12 @@ import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcons from '../subComponents/SocialIcons'
 import Home from '../subComponents/home'
 import ParticleComponent from '../subComponents/ParticlesComponent'
+import BigTitle from '../subComponents/BigTitle'
 
 const Box = styled.div`
 background-color: ${props => props.theme.body};
 width:100%;
-height:100vh;
+height:120vh;
 position:relative;
 display:flex;
 justify-content: space-evenly;
@@ -21,7 +22,7 @@ const Main = styled.div`
 border: 2px solid ${props => props.theme.text};
 color: ${props => props.theme.text};
 background-color: ${props => props.theme.body};
-padding: 2rem;
+padding: 1rem;
 width:30vw;
 height:;
 z-index:3;
@@ -83,8 +84,9 @@ const MySkillsPage =()=>{
                 <LogoComponent  theme='light'/>
                 <SocialIcons  theme='light'/>
                 <Home/>
-                
+                <BigTitle text="Skills"  top='0%' right='10%'/>
                 <Main>
+              
                        <Title>
                            <Design width={40} height={40}/> Backend Developer
                        </Title>

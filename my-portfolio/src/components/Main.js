@@ -28,10 +28,10 @@ padding:2rem;
 const Contact = styled(Link)`
 color:${prop => prop.theme.text};
 position:absolute;
-top:3rem;
-right:100px;
+top:;
+right:28px;
 text-decoration:none;
-// right:calc(1rem+ 2vw);
+right:calc(1rem+ 2vw);
 z-index:3;
 
 `

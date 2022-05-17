@@ -18,7 +18,43 @@ justify-content: space-evenly;
 align-items: center;
 
 `
+const Container = styled.div`
+@media only screen and (max-width: 680px) {
+    /* styles for browsers larger than 960px; */
+    
+    z-index:1;
+  
+}
+@media only screen and (min-width: 680px) {
+    /* styles for browsers larger than 960px; */
+    display:flex;
+    z-index:1;
+  
+}
+
+
+`
 const Main = styled.div`
+@media only screen and (max-width: 680px) {
+    /* styles for browsers larger than 960px; */
+  
+    width: 60vw;
+    height:;
+    margin-bottom: 4rem;
+   
+
+}
+@media only screen and (min-width: 680px) {
+    /* styles for browsers larger than 960px; */
+  
+    width: 30vw;
+    height:;
+    right:55vw;
+    margin-left: 4rem;
+   
+
+}
+
 border: 2px solid ${props => props.theme.text};
 color: ${props => props.theme.text};
 background-color: ${props => props.theme.body};
@@ -26,7 +62,7 @@ padding: 1rem;
 width:30vw;
 height:;
 z-index:3;
-line-height:1.5;
+// line-height:1.5;
 cursor:pointer;
 font-family:'Ubuntu Mono', monospace;
 display:flex;
@@ -85,70 +121,73 @@ const MySkillsPage =()=>{
                 <SocialIcons  theme='light'/>
                 <Home/>
                 <BigTitle text="Skills"  top='0%' right='10%'/>
+                <Container>
                 <Main>
               
-                       <Title>
-                           <Design width={40} height={40}/> Backend Developer
-                       </Title>
-                       <Description> I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life.</Description>
-                       <Description>
-                           
-                           <strong>Skills</strong>
-                           <ul>
-                               <li>
-                                   Web Design
-                               </li>
-                               <li>
-                                   Web Design  
-                               </li>   
-                           </ul>
-                       </Description>
-                       <Description>
-                           
-                           <strong>Tools</strong>
-                           <ul>
-                               <li>
-                                   Web Design
-                               </li>
-                               <li>
-                                   Web Design
-                               </li>   
-                           </ul>
-                       </Description>  
-                </Main>
-                <Main> 
-                <Title>
-                           <Developer width={40} height={40}/> Frontend Developer
-                       </Title>
-                
-                <Description>
-                I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life.
+              <Title>
+                  <Design width={40} height={40}/> Backend Developer
+              </Title>
+              <Description> I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life.</Description>
+              <Description>
+                  
+                  <strong>Skills</strong>
+                  <ul>
+                      <li>
+                          Web Design
+                      </li>
+                      <li>
+                          Web Design  
+                      </li>   
+                  </ul>
+              </Description>
+              <Description>
+                  
+                  <strong>Tools</strong>
+                  <ul>
+                      <li>
+                          Web Design
+                      </li>
+                      <li>
+                          Web Design
+                      </li>   
+                  </ul>
+              </Description>  
+       </Main>
+       <Main> 
+       <Title>
+                  <Developer width={40} height={40}/> Frontend Developer
+              </Title>
+       
+       <Description>
+       I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life.
 
-                       </Description>
-                       <Description>
-                           <strong>Skills</strong>
-                           <ul>
-                               <li>
-                                   Web Design
-                               </li>
-                               <li>
-                                   Web Design
-                               </li>   
-                           </ul>
-                       </Description>
-                       <Description>
-                           
-                           <strong>Tools</strong>
-                           <ul>
-                               <li>
-                                   Web Design
-                               </li>
-                               <li>
-                                   Web Design
-                               </li>   
-                           </ul>
-                       </Description> 
-                       </Main> 
+              </Description>
+              <Description>
+                  <strong>Skills</strong>
+                  <ul>
+                      <li>
+                          Web Design
+                      </li>
+                      <li>
+                          Web Design
+                      </li>   
+                  </ul>
+              </Description>
+              <Description>
+                  
+                  <strong>Tools</strong>
+                  <ul>
+                      <li>
+                          Web Design
+                      </li>
+                      <li>
+                          Web Design
+                      </li>   
+                  </ul>
+              </Description> 
+              </Main> 
+                </Container>
+               
             </Box>
         </ThemeProvider>
     )

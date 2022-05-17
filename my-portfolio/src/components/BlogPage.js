@@ -25,6 +25,7 @@ position:relative;
 paddding-bottom:5rem;
 `
 const Center = styled.div`
+
 display:flex;
 justify-content:center;
 align-items:center;
@@ -32,9 +33,16 @@ padding-top:10rem;
 
 `
 const Grid = styled.div`
+@media only screen and (max-device-width: 480px) {
+    /* styles for browsers larger than 960px; */
+    width: calc(60vw);
+    // display:column;
+    grid-template-columns: none;
+}
 display:grid;
 grid-template-columns: repeat(2,minmax(calc(10rem + 15vw),1fr));
 grid-gap:calc(1rem + 2vw);
+
 
 `
 

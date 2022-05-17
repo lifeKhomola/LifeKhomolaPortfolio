@@ -35,6 +35,12 @@ border-right: 2px solid ${props =>props.theme.text};
    z-index:1;
 `
 const SubBox = styled.div`
+@media only screen and (max-device-width: 480px) {
+    /* styles for browsers larger than 960px; */
+  
+    flex-direction:flex;
+    display:block;
+}
 width:50%;
 position:relative;
 display:flex;

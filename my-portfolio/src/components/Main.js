@@ -36,17 +36,33 @@ z-index:3;
 
 `
 const Blog = styled(Link)`
+@media only screen and (max-width: 680px) {
+    /* styles for browsers larger than 960px; */
+    
+    // z-index:1;
+    color:${prop => prop.theme.text};
+    top:60%;
+
+}
 color:${prop => prop.theme.text};
 position:absolute;
 top:50%;
-right: calc(1rem + 2vw);
+right: 2px;
 transform: translate(-50%,-50%)  rotate(90deg);
 text-decoration:none;
-// right:calc(1rem+ 2vw);
-z-index:1;
+
+z-index:3;
 
 `
 const Work = styled(Link)`
+@media only screen and (max-width: 680px) {
+    /* styles for browsers larger than 960px; */
+    
+    // z-index:1;
+    color:${prop => prop.theme.body};
+    top:30%;
+
+}
 color:${prop => prop.click ? prop.theme.body: prop.theme.text};
 position:absolute;
 top:50%;
@@ -55,6 +71,7 @@ transform: translate(-50%,-50%) rotate(-90deg);
 text-decoration:none;
 // right:calc(1rem+ 2vw);
 z-index:1;
+
 
 `
 const BottonBar = styled.div`
@@ -68,6 +85,12 @@ justify-content: space-evenly;
 
 `
 const About = styled(Link)`
+@media only screen and (max-width: 680px) {
+    /* styles for browsers larger than 960px; */
+    
+    // z-index:1;
+    color:${prop => prop.theme.text};
+}
 color:${prop => prop.click ? prop.theme.body: prop.theme.text};
 text-decoration:none;
 z-index:1;
@@ -87,6 +110,7 @@ to{
 }
 `
 const Center = styled.button`
+
 position:absolute;
 top:${props => props.click ? '80%':'50%'};
 left:${props => props.click ? '92%':'50%'};
@@ -114,6 +138,23 @@ transition: all 1s ease;
 `
 
 const DarkDiv = styled.div`
+@media only screen and (max-width: 680px) {
+    /* styles for browsers larger than 960px; */
+    
+    // z-index:1;
+    position :absolute;
+bottom:50%;
+
+// color:${prop => prop.click ? prop.theme.body: prop.theme.body};
+
+background-color:#000;
+bottom:50%;
+right:0%;
+width:${props => props.click ? '100%':'0%'};
+height:${props => props.click ? '50%':'0%'};
+transition: height 0.5s ease,width 1s ease;
+  
+}
 position :absolute;
 top:0;
 background-color:#000;

@@ -4,7 +4,7 @@ import styled, {keyframes} from 'styled-components'
 import HomeBtn from '../subComponents/home'
 import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcons from '../subComponents/SocialIcons'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {YinYang} from '../components/AllSvgs'
 import Intro from '../components/intro'
 import {motion} from 'framer-motion'
@@ -25,7 +25,7 @@ const Container = styled.div`
 padding:2rem;
 `
 
-const Contact = styled(NavLink)`
+const Contact = styled(Link)`
 color:${prop => prop.theme.text};
 position:absolute;
 top:3rem;
@@ -35,7 +35,7 @@ text-decoration:none;
 z-index:3;
 
 `
-const Blog = styled(NavLink)`
+const Blog = styled(Link)`
 color:${prop => prop.theme.text};
 position:absolute;
 top:50%;
@@ -46,7 +46,7 @@ text-decoration:none;
 z-index:1;
 
 `
-const Work = styled(NavLink)`
+const Work = styled(Link)`
 color:${prop => prop.click ? prop.theme.body: prop.theme.text};
 position:absolute;
 top:50%;
@@ -67,13 +67,13 @@ display:flex;
 justify-content: space-evenly;
 
 `
-const About = styled(NavLink)`
+const About = styled(Link)`
 color:${prop => prop.click ? prop.theme.body: prop.theme.text};
 text-decoration:none;
 z-index:1;
 
 `
-const Skills = styled(NavLink)`
+const Skills = styled(Link)`
 color:${prop => prop.theme.text};
 text-decoration:none;
 z-index:1;
@@ -160,6 +160,7 @@ const Main =()=>{
                    whileHover={{scale:1.1}}
                    whileTap={{scale:0.9}}
                    >Work</motion.h3>
+                
                </Work>
                <BottonBar>
                    <About to='/about' click={click}>
@@ -168,7 +169,7 @@ const Main =()=>{
                    whileTap={{scale:0.9}}
                    >About</motion.h3>
                    </About>
-                   <Skills to='/skills' click={click}>
+                   <Skills to='/skills' >
                    <motion.h3
                    whileHover={{scale:1.1}}
                    whileTap={{scale:0.9}}

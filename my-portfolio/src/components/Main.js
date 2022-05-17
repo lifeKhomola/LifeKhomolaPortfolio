@@ -59,7 +59,7 @@ const Work = styled(Link)`
     /* styles for browsers larger than 960px; */
     
     // z-index:1;
-    color:${prop => prop.theme.body};
+    color:${prop => prop.click ? prop.theme.body: prop.theme.text};
     top:30%;
 
 }

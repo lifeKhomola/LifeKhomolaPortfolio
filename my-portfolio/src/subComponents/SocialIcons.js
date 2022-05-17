@@ -58,4 +58,4 @@ const SocialIcons = (props)=>{
     )
 }
 
-export default SocialIcons
+export default SocialIcons 
